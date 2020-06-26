@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.Optional;
 
 import com.example.demo.model.Persona;
-import com.example.demo.model.Usuario;
 import com.example.demo.repositories.PersonaRepository;
 import com.example.demo.services.PersonaService;
 
@@ -33,7 +32,7 @@ public class PersonaServiceImpl implements PersonaService {
 	}
 
 	@Override
-	public Usuario findByEmailAndPassword(String email, String password) {
+	public Optional <Persona> findByEmailAndPassword(String email, String password) {
 		return repo.findByEmailAndPassword(email, password);
 	}
 

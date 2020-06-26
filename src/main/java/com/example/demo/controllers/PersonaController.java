@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 import com.example.demo.model.Persona;
-import com.example.demo.model.Usuario;
-//import com.example.demo.repositories.PersonaRepository;
 import com.example.demo.services.PersonaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 
 @RestController
 @RequestMapping("/personas")
@@ -38,8 +36,8 @@ public class PersonaController {
 		return service.getAll();
     }
     
-    @GetMapping("/consulta")
-    public Usuario findByEmailAndPassword(@RequestParam (name = "email") String e_valor, @RequestParam (name = "password") String p_valor){
-        return service.findByEmailAndPassword(e_valor, p_valor);
+    @PostMapping("/autenticacion")
+    public Persona findByEmailAndPassword(@RequestBody Persona persona){
+        return service.findByEmailAndPassword(persona.getEmail(), persona.getPassword()).orElseThrow(() -> new RuntimeException());
     }
 }
