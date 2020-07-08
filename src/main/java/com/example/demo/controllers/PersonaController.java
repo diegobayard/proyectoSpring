@@ -1,5 +1,5 @@
 package com.example.demo.controllers;
-
+/*
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -40,4 +40,4 @@ public class PersonaController {
     public Persona findByEmailAndPassword(@RequestBody Persona persona){
         return service.findByEmailAndPassword(persona.getEmail(), persona.getPassword()).orElseThrow(() -> new RuntimeException());
     }
-}
+}*/

@@ -36,4 +36,24 @@ public class PersonaServiceImpl implements PersonaService {
 		return repo.findByEmailAndPassword(email, password);
 	}
 
+	@Override
+	public Optional<Persona> findByEmail(String email) {
+		return repo.findByEmail(email);
+	}
+
+	@Override
+	public Optional<Persona> findByUsername(String username) {
+		return repo.findByUsername(username);
+	}
+
+	@Override
+	public Boolean existsByUsername(String username) {
+		return repo.existsByUsername(username);
+	}
+
+	@Override
+	public Boolean existsByEmail(String email) {
+		return repo.existsByEmail(email);
+	}
+
 }
